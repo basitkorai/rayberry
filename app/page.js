@@ -1,13 +1,11 @@
 // /app/page.js
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, } from "react";
 import Navbar from "../components/Navbar";
 import AuthDialog from "../components/AuthDialog";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { supabase } from "../lib/supabaseClient";
-import { useRouter } from "next/navigation";
 import { ThemeToggle } from "@/components/ThemeToggleButton";
 import { Send } from 'lucide-react';
 import { TypewriterTextarea } from "@/components/TypewriterTeaxtarea";

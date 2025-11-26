@@ -1,29 +1,28 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '../lib/supabaseClient'
 import { Button } from '@/components/ui/button'
 
 export default function Navbar() {
   const [user, setUser] = useState(null)
 
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => setUser(data?.user ?? null))
-    const { data: listener } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        setUser(session?.user ?? null)
-      }
-    )
-    return () => listener.subscription.unsubscribe()
-  }, [])
+  // useEffect(() => {
+  //   supabase.auth.getUser().then(({ data }) => setUser(data?.user ?? null))
+  //   const { data: listener } = supabase.auth.onAuthStateChange(
+  //     (_event, session) => {
+  //       setUser(session?.user ?? null)
+  //     }
+  //   )
+  //   return () => listener.subscription.unsubscribe()
+  // }, [])
 
-  const signIn = async () => {
-    // opens provider (Google/GitHub) sign-in flow
-    await supabase.auth.signInWithOAuth({ provider: 'google' })
-  }
+  // const signIn = async () => {
+  //   // opens provider (Google/GitHub) sign-in flow
+  //   await supabase.auth.signInWithOAuth({ provider: 'google' })
+  // }
 
-  const signOut = async () => {
-    await supabase.auth.signOut()
+  // const signOut = async () => {
+  //   await supabase.auth.signOut()
   }
 
   return (
@@ -56,12 +55,12 @@ export default function Navbar() {
         {user ? (
           <div className="flex items-center gap-3">
             <span className="text-sm text-white/90">{user.email}</span>
-            <Button variant="outline" onClick={signOut}>
+            <Button variant="outline">
               Sign out
             </Button>
           </div>
         ) : (
-          <Button onClick={signIn}>Sign in</Button>
+          <Button >Sign in</Button>
         )}
       </div>
     </nav>

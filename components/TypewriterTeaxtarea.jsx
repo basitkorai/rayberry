@@ -9,7 +9,7 @@ export function TypewriterTextarea() {
       {!showTextarea ? (
         <div
           onClick={() => setShowTextarea(!showTextarea)}
-          className="cursor-pointer border p-3 rounded-md bg-muted text-muted-foreground font-mono"
+          className="cursor-pointer border p-3 rounded-md bg-muted text-black dark:white font-mono"
         >
           <TextType
             text={['Text typing effect', 'for your websites', 'Happy coding!']}
@@ -17,11 +17,19 @@ export function TypewriterTextarea() {
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter="|"
-            className="text-base"
+            className="text-base text-black dark:text-white"
           />
         </div>
       ) : (
-        <Textarea className="font-mono text-base" autoFocus />
+        <div
+          onClick={() => setShowTextarea(!showTextarea)}
+          className="cursor-pointer border p-3 rounded-md bg-muted text-muted-foreground font-mono"
+        >
+          <Textarea
+            className="font-mono text-base text-black dark:text-white"
+            autoFocus
+          />
+        </div>
       )}
     </div>
   )

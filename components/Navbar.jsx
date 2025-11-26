@@ -23,7 +23,7 @@ export default function Navbar() {
 
   // const signOut = async () => {
   //   await supabase.auth.signOut()
-  }
+  //}
 
   return (
     <nav
@@ -55,12 +55,10 @@ export default function Navbar() {
         {user ? (
           <div className="flex items-center gap-3">
             <span className="text-sm text-white/90">{user.email}</span>
-            <Button variant="outline">
-              Sign out
-            </Button>
+            <Button variant="outline">Sign out</Button>
           </div>
         ) : (
-          <Button >Sign in</Button>
+          <Button>Sign in</Button>
         )}
       </div>
     </nav>

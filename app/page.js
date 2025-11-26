@@ -1,10 +1,8 @@
 // /app/page.js
 "use client";
 
-import { useEffect, useState, } from "react";
+import { useState, } from "react";
 import Navbar from "../components/Navbar";
-import AuthDialog from "../components/AuthDialog";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggleButton";
 import { Send } from 'lucide-react';
@@ -34,7 +32,7 @@ export default function HomePage() {
         </div>
       </main>
 
-      <AuthDialog open={showAuth} onOpenChange={setShowAuth} />
+      {/* <AuthDialog open={showAuth} onOpenChange={setShowAuth} /> */}
     </div>
   );
 }
